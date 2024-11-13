@@ -19,3 +19,6 @@ terraform/override.tf
 terraform/override.tf.json
 terraform/*_override.tf
 terraform/*_override.tf.json
+
+# Ignore the zipped Lambda deployment package
+zipped_lambda_functions/*.zip

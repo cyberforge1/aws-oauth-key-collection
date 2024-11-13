@@ -19,7 +19,7 @@ resource "aws_iam_role" "lambda_execution_role" {
 
 resource "aws_iam_policy" "lambda_execution_policy" {
   name        = "LambdaExecutionPolicy"
-  description = "Policy to allow Lambda to write to CloudWatch logs and access Secrets Manager"
+  description = "Policy to allow Lambda to access Secrets Manager and write to CloudWatch"
 
   policy = jsonencode({
     "Version": "2012-10-17",
@@ -36,7 +36,8 @@ resource "aws_iam_policy" "lambda_execution_policy" {
       {
         "Effect": "Allow",
         "Action": [
-          "secretsmanager:GetSecretValue"
+          "secretsmanager:GetSecretValue",
+          "secretsmanager:PutSecretValue"
         ],
         "Resource": "arn:aws:secretsmanager:${var.AWS_ACCOUNT_ID}:${var.CUSTOM_AWS_REGION}:secret:api_secrets*"
       }
