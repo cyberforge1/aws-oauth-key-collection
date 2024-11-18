@@ -16,17 +16,14 @@ cd terraform
 terraform plan
 
 export $(cat .env | xargs)
-
 terraform apply
 
 terraform destroy
 
 ## Zip Lambda functions
 
-cd lambda_trigger
-zip -r ../zipped_lambda_functions/lambda_trigger.zip .
-
-
+cd lambda_functions
+zip ../zipped_lambda_functions/lambda_trigger.zip lambda_trigger.py
 
 
 ## Basic Checks
@@ -34,5 +31,4 @@ zip -r ../zipped_lambda_functions/lambda_trigger.zip .
 
 
 ## Trigger
-
 python scripts/invoke.lambda.py
