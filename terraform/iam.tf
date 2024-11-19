@@ -38,7 +38,6 @@ resource "aws_iam_policy" "lambda_execution_policy" {
         "Action": [
           "secretsmanager:GetSecretValue"
         ],
-        # Use the dynamic SECRET_NAME variable
         "Resource": "arn:aws:secretsmanager:${var.CUSTOM_AWS_REGION}:${var.AWS_ACCOUNT_ID}:secret:${var.SECRET_NAME}"
       }
     ]
@@ -46,6 +45,6 @@ resource "aws_iam_policy" "lambda_execution_policy" {
 }
 
 resource "aws_iam_role_policy_attachment" "lambda_policy_attachment" {
-  role       = aws_iam_role.lambda_execution_role.name
-  policy_arn = aws_iam_policy.lambda_execution_policy.arn
+  role       = aws_iam_role.lambda_execution_role.name            # Attach the policy to the role
+  policy_arn = aws_iam_policy.lambda_execution_policy.arn         # Reference the IAM policy ARN
 }
