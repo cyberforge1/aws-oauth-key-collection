@@ -1,4 +1,4 @@
-# /terraform/secrets.tf
+# terraform/secrets.tf
 
 provider "aws" {
   region  = var.CUSTOM_AWS_REGION

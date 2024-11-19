@@ -10,7 +10,8 @@ resource "aws_lambda_function" "lambda_trigger" {
 
   environment {
     variables = {
-      # Add any necessary environment variables here
+      CUSTOM_AWS_REGION = var.CUSTOM_AWS_REGION
+      SECRET_NAME       = var.SECRET_NAME
     }
   }
 

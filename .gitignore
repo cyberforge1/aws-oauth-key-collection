@@ -1,6 +1,7 @@
 
 .env
 venv
+.secret-commands.md
 
 
 # Ignore Terraform provider binaries and cache files
@@ -19,3 +20,5 @@ terraform/override.tf
 terraform/override.tf.json
 terraform/*_override.tf
 terraform/*_override.tf.json
+
+terraform/terraform.tfvars

@@ -38,7 +38,8 @@ resource "aws_iam_policy" "lambda_execution_policy" {
         "Action": [
           "secretsmanager:GetSecretValue"
         ],
-        "Resource": "arn:aws:secretsmanager:${var.AWS_ACCOUNT_ID}:${var.CUSTOM_AWS_REGION}:secret:api_secrets*"
+        # Use the dynamic SECRET_NAME variable
+        "Resource": "arn:aws:secretsmanager:${var.CUSTOM_AWS_REGION}:${var.AWS_ACCOUNT_ID}:secret:${var.SECRET_NAME}"
       }
     ]
   })

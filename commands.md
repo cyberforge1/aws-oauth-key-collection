@@ -22,8 +22,7 @@ terraform destroy
 
 ## Zip Lambda functions
 
-cd lambda_functions
-zip ../zipped_lambda_functions/lambda_trigger.zip lambda_trigger.py
+zip -r zipped_lambda_functions/lambda_trigger.zip lambda_functions/lambda_trigger
 
 
 ## Basic Checks
