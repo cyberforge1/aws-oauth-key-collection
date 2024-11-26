@@ -27,7 +27,8 @@ zip -r zipped_lambda_functions/lambda_api_test_call.zip lambda_api_test_call/
 
 ## Trigger
 
-python scripts/invoke_lambda.py
+python scripts/invoke_lambda_trigger.py
+
 
 
 
