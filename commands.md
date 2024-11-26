@@ -19,9 +19,10 @@ terraform -chdir=terraform destroy
 
 ## Zip Lambda functions
 
-zip -r zipped_lambda_functions/lambda_trigger.zip lambda_trigger/
+zip -j zipped_lambda_functions/lambda_trigger.zip lambda_trigger/lambda_trigger.py
 
-zip -r zipped_lambda_functions/lambda_api_test_call.zip lambda_test_api_call/
+zip -r zipped_lambda_functions/lambda_api_test_call.zip lambda_api_test_call/
+
 
 
 ## Trigger
