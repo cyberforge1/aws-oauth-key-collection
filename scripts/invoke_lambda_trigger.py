@@ -18,7 +18,13 @@ lambda_client = boto3.client('lambda', region_name=AWS_REGION)
 
 def trigger_lambda():
     try:
-        response = lambda_client.invoke(FunctionName=LAMBDA_FUNCTION_NAME)
+        # Invoke the Lambda function without a payload
+        response = lambda_client.invoke(
+            FunctionName=LAMBDA_FUNCTION_NAME,
+            InvocationType="RequestResponse"  # Wait for the function to execute
+        )
+        
+        # Decode and print the response from the Lambda function
         print("Lambda function triggered successfully.")
         print("Response:", response['Payload'].read().decode("utf-8"))
     except Exception as e:

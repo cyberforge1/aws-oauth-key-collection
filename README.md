@@ -5,3 +5,7 @@ An automated pipeline that retrieves, processes, and stores an OAuth key using A
 
 ## Screenshot
 ![Project Diagram](diagrams/aws-oauth-key-collection-diagram-dark.png "AWS OAuth Key Collection Architecture")
+
+## Link to the API
+https://api.nsw.gov.au/Product/Index/26
+
